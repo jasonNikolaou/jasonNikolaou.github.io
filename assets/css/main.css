@@ -3219,3 +3219,38 @@ input, select, textarea {
 			}
 
 	}
+
+/* === Typography overrides (put at end of CSS) === */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+/* Use rems so scaling is easy */
+:root {
+  font-size: 18px;            /* bump all text globally; try 17–19px */
+}
+
+body, input, select, textarea {
+  font-family: "Inter", "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 1rem;            /* 1rem = :root size */
+  line-height: 1.7;
+  color: #4a4a4a;             /* a touch darker for readability */
+}
+
+/* Make bold actually bold */
+strong, b { font-weight: 600; color: #555; }
+
+/* Headings scale */
+h1 { font-size: 2.2rem; line-height: 1.25; }
+h2 { font-size: 1.8rem; line-height: 1.3; }
+h3 { font-size: 1.4rem; line-height: 1.35; }
+h4 { font-size: 1.2rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.85rem; }
+
+/* Kill the downsize that happens at <=1800px in the original CSS */
+@media screen and (max-width: 1800px) {
+  body, input, select, textarea { font-size: 1rem; }
+}
+
+/* Optional: slightly larger inside the Experience section */
+#three { font-size: 1.05rem; }
+#three h2 { font-size: 2.0rem; }
